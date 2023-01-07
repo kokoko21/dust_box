@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import Leaflet from 'leaflet';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header';
+import 'leaflet/dist/leaflet.css';
+import SimpleExample from './components/map';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+Leaflet.Icon.Default.imagePath = '//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/'
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <SimpleExample />
+      </div>
+    );
+  }
 }
 
 export default App;
